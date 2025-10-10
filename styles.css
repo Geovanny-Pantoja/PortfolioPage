@@ -105,7 +105,6 @@ html {
      =========================== */
   /* Apply to both .project-card and the id #project-card you used */
   .project-card,
-  #project-card,
   .project-placeholder {
     background-color: #ffffff;          /* white card */
     color: #222222;                     /* dark text inside card */
@@ -121,7 +120,6 @@ html {
   
   /* Lift effect on hover */
   .project-card:hover,
-  #project-card:hover,
   .project-placeholder:hover {
     transform: translateY(-6px);
     box-shadow: 0 14px 30px rgba(0, 24, 64, 0.18);
@@ -129,7 +127,6 @@ html {
   
   /* Headings inside cards */
   .project-card h3,
-  #project-card h3,
   .project-placeholder h3 {
     margin: 0 0 10px 0;
     color: #001f4d; /* navy heading color */
@@ -138,8 +135,8 @@ html {
   }
   
   /* Paragraph inside cards */
-  .project-card p,
-  #project-card p {
+  .project-card p
+   {
     margin: 0 0 12px 0;
     text-align: left;
     line-height: 1.5;
@@ -147,8 +144,7 @@ html {
   }
   
   /* Images in cards: responsive and centered */
-  .project-card img,
-  #project-card img,
+  .project-card img,  
   .project-placeholder img,
   .project-img {
     display: block;
@@ -199,9 +195,7 @@ html {
   
   /* Make inputs readable: when inside a white .project-card override to dark text */
   .project-card input,
-  #project-card input,
   .project-card textarea,
-  #project-card textarea,
   .project-placeholder input,
   .project-placeholder textarea {
     background-color: #fff;
