@@ -1,0 +1,273 @@
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Body / global layout */
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f4f8; /* light fallback */
+    color: #ffffff;             /* default text color for colored sections */
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* center the section containers */
+  }
+  
+  /* Fixed header + navigation */
+  header {
+    background-color: #001f4d; /* navy */
+    padding: 18px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  header h1#welcomeMessage {
+    margin: 0;
+    font-size: 1.9rem;
+    color: #ffffff;
+  }
+  
+  /* Nav list */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+  }
+  
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 14px;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: background-color 0.22s ease, transform 0.12s ease;
+  }
+  
+  nav a:hover,
+  nav a:focus {
+    background-color: rgba(255, 255, 255, 0.06);
+    transform: translateY(-1px);
+  }
+  
+  /* ===========================
+     Sections — centered content area
+     =========================== */
+  section {
+    padding: 140px 20px 60px 20px; /* top padding prevents overlap with fixed header */
+    min-height: 420px;
+    width: 100%;
+    max-width: 1000px;             /* keeps content narrow and centered */
+    box-sizing: border-box;
+    margin: 0 auto;
+    color: #ffffff;                /* default text color on gradient backgrounds */
+  }
+  
+  /* Gradient backgrounds for smooth blending between sections */
+  #about {
+    background: linear-gradient(to bottom, #001f4d 0%, #003366 100%);
+  }
+  
+  #projects {
+    background: linear-gradient(to bottom, #003366 0%, #00509e 100%);
+  }
+  
+  #contact {
+    background: linear-gradient(to bottom, #00509e 0%, #0073e6 100%);
+  }
+  
+  /* Section headings and text */
+  section h1 {
+    margin-top: 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  /* Slightly muted paragraph color for readability over gradients */
+  section p {
+    max-width: 840px;
+    margin: 12px auto;
+    color: #e7eef8;
+    text-align: left;
+  }
+  
+  /* ===========================
+     Project cards (white cards on colored background)
+     =========================== */
+  /* Apply to both .project-card and the id #project-card you used */
+  .project-card,
+  #project-card,
+  .project-placeholder {
+    background-color: #ffffff;          /* white card */
+    color: #222222;                     /* dark text inside card */
+    border-radius: 12px;
+    margin: 30px auto;
+    padding: 20px;
+    width: 92%;
+    max-width: 900px;
+    box-shadow: 0 6px 18px rgba(0, 24, 64, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-sizing: border-box;
+  }
+  
+  /* Lift effect on hover */
+  .project-card:hover,
+  #project-card:hover,
+  .project-placeholder:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0, 24, 64, 0.18);
+  }
+  
+  /* Headings inside cards */
+  .project-card h3,
+  #project-card h3,
+  .project-placeholder h3 {
+    margin: 0 0 10px 0;
+    color: #001f4d; /* navy heading color */
+    text-align: center;
+    font-size: 1.25rem;
+  }
+  
+  /* Paragraph inside cards */
+  .project-card p,
+  #project-card p {
+    margin: 0 0 12px 0;
+    text-align: left;
+    line-height: 1.5;
+    color: #333333;
+  }
+  
+  /* Images in cards: responsive and centered */
+  .project-card img,
+  #project-card img,
+  .project-placeholder img,
+  .project-img {
+    display: block;
+    margin: 14px auto;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  /* Coming soon card: center text with subtle style */
+  .project-placeholder {
+    text-align: center;
+    font-style: italic;
+    color: #444;
+  }
+  
+  /* ===========================
+     Contact form inside colored section
+     =========================== */
+  form {
+    max-width: 640px;
+    margin: 18px auto;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+  }
+  
+  label {
+    font-weight: 700;
+    margin-top: 10px;
+    color: #e7eef8;
+  }
+  
+  input,
+  textarea {
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: #222222;
+    outline: none;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  
+  /* Make inputs readable: when inside a white .project-card override to dark text */
+  .project-card input,
+  #project-card input,
+  .project-card textarea,
+  #project-card textarea,
+  .project-placeholder input,
+  .project-placeholder textarea {
+    background-color: #fff;
+    color: #222;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Focus state */
+  input:focus,
+  textarea:focus {
+    box-shadow: 0 3px 12px rgba(0, 20, 60, 0.12);
+    border-color: rgba(0, 116, 217, 0.6);
+  }
+  
+  /* Submit button */
+  button {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background-color: #001f4d;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.18s ease, transform 0.08s ease;
+  }
+  
+  button:hover {
+    background-color: #003366;
+    transform: translateY(-2px);
+  }
+  
+  /* ===========================
+     Responsive Adjustments
+     =========================== */
+  @media (max-width: 900px) {
+    section {
+      padding: 120px 16px 50px 16px;
+      max-width: 880px;
+    }
+  
+    .project-card,
+    #project-card,
+    .project-placeholder {
+      width: 94%;
+      padding: 16px;
+    }
+  
+    header h1#welcomeMessage {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    section {
+      padding: 110px 12px 40px 12px;
+    }
+  
+    .project-card img,
+    #project-card img,
+    .project-placeholder img {
+      max-width: 320px;
+    }
+  }

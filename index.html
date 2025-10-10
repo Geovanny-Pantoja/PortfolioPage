@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+      Author:Geovanny Pantoja 
+      Date: 10 October 2025
+      Purpose: Portfolio page
+    -->
+    <meta charset="utf-8" />
+    <!-- Ensures proper scaling and layout on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geovanny Portfolio</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css" />    
+  </head>
+  <body>
+  <!-- Page header displaying the title -->
+  <header>
+    <h1 id="welcomeMessage">
+      Geovanny Pantoja - Portfolio Page
+    </h1> 
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>    
+    </nav>   
+  </header>
+  <!-- Main content area -->
+  <section id="about">
+    <h1>About</h1>    
+    <p>
+      Information Technology has transformed the way we live and will continue to shape our future. 
+      It enables seamless integration across all aspects of life. Serving in the military gave me the opportunity to make a meaningful impact, 
+      and I want to continue making a difference by contributing to the future through my passion for software development. 
+    </p>
+    <p>
+      Solving real-world problems excites me. My journey began with successfully completing the Microsoft Software and Systems Academy (MSSA), 
+      which laid a strong foundation for my technical growth. After MSSA, 
+      I joined a company where I gained hands-on experience maintaining and updating web applications using a diverse set of technologies, including .NET, SQL, MySQL, Azure, AWS, Windows Server, Red Hat, and more.
+    </p>
+    <p>
+      In January, I felt the need to further expand my skills and decided to enroll at ECPI University in the Software Development track. 
+      This next step is helping me grow both professionally and personally as I continue to pursue my goal of shaping the future through technology.
+    </p>
+  </section>
+  <section id="projects">
+    <h1>Projects</h1>
+    <div class="project-card">
+      <!-- Project 1 -->
+      <h3>Project 1: E-commerce Web App</h3>
+      <p>
+        MyWebApp is a secure, role-based web application built using PHP and MySQL, following the Model-View-Controller (MVC) architecture. 
+        It allows users to register, log in, browse products, manage a shopping cart, and complete checkout. Administrators can manage product listings, including adding, editing, and discontinuing items. 
+        The application emphasizes session tracking, form validation, and transactional integrity.
+      </p>
+      <a href="https://github.com/Geovanny-Pantoja/Electro_Shop.git" target="_blank">
+        <img src="images/ecommercepict.jpg" alt="Young man with computer showing an e-commerce icon" width="300">
+      </a>
+    </div>
+    <div id="project-card">
+      <!-- Project 2 -->
+      <h3>Project 2: C Financial Console app </h3>
+      <p>
+        This C-based project features a menu-driven financial tracking system that allows users to input income and expense data, view transaction history, and generate summaries including total amounts and counts. 
+        It uses a custom data structure to store entries with fields like date, description, amount, and category. 
+        The program supports reading from and writing to a CSV file for persistent storage, and includes logic to load existing data at startup and save new entries upon exit.
+      </p>
+      <a href="https://github.com/Geovanny-Pantoja/ECPI_Agile_Project.git" target="_blank">
+        <img src="images/Cpicture.png" alt="C Code icon" width="300">
+      </a>
+    </div>
+      <!-- Placeholder for future project -->
+    <div class="project-placeholder">
+      <h3>Coming Soon</h3>
+      <img src="images/comingsoon.png" alt="Coming Soon" class="project-img">
+        
+    </div>        
+  </section>
+  <section id="contact">
+    <h1>Contact</h1>
+    <form action="#" method="post">
+      <label for="name">Sender Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email address:</label><br>
+      <input type="email" id="subject" name="subject" required><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" row="6" cols="40" required></textarea><br>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  <script>
+    var userName = prompt("Hello, What your name?");
+    if (userName){
+      var welcomeElement = document.getElementById("welcomeMessage")
+      welcomeElement.textContent = "Welcome, " + userName + "! This is Geovanny's Portfolio"
+    }
+  </script>
+    
+ </body> 
+</html>
