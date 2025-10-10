@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles.css" />    
   </head>
   <body>
-  <!-- Page header displaying the title -->
+  <!-- Page header displaying the title and Nav link-->
   <header>
     <h1 id="welcomeMessage">
       Geovanny Pantoja - Portfolio Page
@@ -79,6 +79,7 @@
     </div>        
   </section>
   <section id="contact">
+    <!-- Contact form with submit button -->
     <h1>Contact</h1>
     <form action="#" method="post">
       <label for="name">Sender Name:</label><br>
@@ -94,7 +95,9 @@
     </form>
   </section>
   <script>
+    //prompt function to store the given name into a variable
     var userName = prompt("Hello, What your name?");
+    //if statement to check if username has a value and dinamically change the header title text 
     if (userName){
       var welcomeElement = document.getElementById("welcomeMessage")
       welcomeElement.textContent = "Welcome, " + userName + "! This is Geovanny's Portfolio"
