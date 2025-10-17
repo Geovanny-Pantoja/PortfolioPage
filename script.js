@@ -70,7 +70,7 @@ function setupDarkModeToggle() {
   function submitButton() {
     const submitted = document.getElementById("sButton")
 
-    submitted.addEventListener("click", function(){
+    submitted.addEventListener("click", function(event){
         event.preventDefault();
         alert("Thank you, " + userName + ", your message has been sent!")
         
