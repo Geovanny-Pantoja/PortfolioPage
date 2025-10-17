@@ -11,7 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geovanny Portfolio</title>
     <!-- Link to external CSS stylesheet -->
-    <link rel="stylesheet" href="styles.css" />    
+    <link rel="stylesheet" href="styles.css" />  
+    <script src="script.js"></script>  
   </head>
   <body>
   <!-- Page header displaying the title and Nav link-->
@@ -22,10 +23,17 @@
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#featured">Featured Content</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>    
     </nav>   
+    <div class="theme-toggle">
+      <label>
+        <input type="checkbox" id="themeToggle">
+        Dark Mode
+      </label>
+    </div>
   </header>
   <!-- Main content area -->
   <section id="about">
@@ -44,6 +52,28 @@
       In January, I felt the need to further expand my skills and decided to enroll at ECPI University in the Software Development track. 
       This next step is helping me grow both professionally and personally as I continue to pursue my goal of shaping the future through technology.
     </p>
+    <h3>Skills</h3>
+    <div class="skills"></div>
+  </section>
+  <section id="featured">
+    <h1>Featured Content</h1>
+    <div id="resources">
+      <h3>University Resources</h3>
+      <p><a href="https://www.ecpi.edu/programs/software-development-bachelor-degree" target="_blank">ECPI Software Development Program</a></p>
+    </div>
+    <div id="PersonalProjects">
+      <h3>Personal Projects GitHub Repositories</h3>
+      <div class="project-row">
+        <a href="https://github.com/Geovanny-Pantoja/Electro_Shop.git" target="_blank">
+          <img src="images/ecommercepict.jpg" alt="Young man with computer showing an e-commerce icon" width="300">
+          <span class="project-label">Electro Shop (E-Commerce)</span>
+        </a>        
+        <a href="https://github.com/Geovanny-Pantoja/ECPI_Agile_Project.git" target="_blank">
+          <img src="images/Cpicture.png" alt="C Code icon" width="300">
+          <span class="project-label">C Financial Console App</span>
+        </a>        
+      </div>                 
+    </div>
   </section>
   <section id="projects">
     <h1>Projects</h1>
@@ -91,17 +121,8 @@
       <label for="message">Message:</label><br>
       <textarea id="message" name="message" row="6" cols="40" required></textarea><br>
 
-      <button type="submit">Submit</button>
+      <button type="submit" id="sButton">Submit</button>
     </form>
-  </section>
-  <script>
-    //prompt function to store the given name into a variable
-    var userName = prompt("Hello, What your name?");
-    //if statement to check if username has a value and dinamically change the header title text 
-    if (userName){
-      var welcomeElement = document.getElementById("welcomeMessage")
-      welcomeElement.textContent = "Welcome, " + userName + "! This is Geovanny's Portfolio"
-    }
-  </script>    
+  </section>  
  </body> 
 </html>
