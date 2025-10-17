@@ -21,7 +21,7 @@ function personalizeWelcomeMessage() {
   //Load skills to about sections
   function loadSkills() {
     const skills = [
-      "JavaScript", "SQL", "MySQL", "C#", "PHP", ".NET", "AWS", "AZURE"
+      "JavaScript", "SQL", "MySQL", "C#", "PHP"
     ];
   
     const skillsContainer = document.querySelector(".skills");
