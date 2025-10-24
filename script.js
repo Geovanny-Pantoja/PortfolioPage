@@ -1,3 +1,5 @@
+
+
 //global variable 
 let userName = "";
 //function to ask for name and personilized the title welcome message
@@ -68,18 +70,43 @@ function setupDarkModeToggle() {
   }
 //function to add functionality to submit button 
   function submitButton() {
-    const submitted = document.getElementById("sButton")
+    const submitted = document.getElementById("sButton");
+    //capturing element to show status message 
+    const status = document.getElementById("statusMessage");
 
     submitted.addEventListener("click", function(event){
         event.preventDefault();
-        alert("Thank you, " + userName + ", your message has been sent!")
-        
-    });
+        submitted.disabled = true;
+        status.innerText = "Sending message...";
 
-    
+        setTimeout(function() {
+          status.innerText = "Thank you, " + userName + ", your message has been sent!";
+          submitted.disabled = false;
+        }, 2500);
+        
+        
+    });   
+
+  }
+  // Adding  dinamacally comming  soon statement by updating the p element 
+  function addComingSoonP () {
+    const soonContainer = document.getElementById("soon");
+    soonContainer.innerHTML = "Exciting things are on the horizon! I'm currently working on a new programming project that showcases the latest skills I'm developing in software development." 
+    + " This upcoming release will highlight my growth in coding techniques, problem-solving strategies, and real-world application of modern technologies. Whether you're curious about clean code," 
+    + " dynamic interfaces, or practical debugging workflows, this project will offer a glimpse into how I'm leveling up as a developer. Stay tuned, it's coming soon, and it's built with purpose.";
 
   }
   
+  // Modifying css to soon paragraph 
+function changeCssStyle(){
+  const soonPar = document.getElementById("soon");
+  const soondiv = document.querySelector(".project-placeholder");
+  soonPar.style.color = "black";    
+  soonPar.style.fontStyle = "normal";
+  soondiv.style.backgroundColor = "#E6E6FA";
+  
+}
+
   // Call both functions when the DOM is ready
   window.addEventListener("DOMContentLoaded", function () {
     personalizeWelcomeMessage();
@@ -87,5 +114,8 @@ function setupDarkModeToggle() {
     loadSkills();
     setupDarkModeToggle();
     submitButton();
+    addComingSoonP();
+    changeCssStyle();
+    changeCssStyle();
 
   });
