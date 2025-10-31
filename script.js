@@ -3,13 +3,13 @@
 //global variable 
 let userName = "";
 //function to ask for name and personilized the title welcome message
-function personalizeWelcomeMessage() {
-    userName = prompt("Hello, What your name?");
-    if (userName) {
-      const welcomeElement = document.getElementById("welcomeMessage");
-      welcomeElement.textContent = "Welcome, " + userName + "! This is Geovanny's Portfolio";
-    }
-  }
+// function personalizeWelcomeMessage() {
+//     userName = prompt("Hello, What your name?");
+//     if (userName) {
+//       const welcomeElement = document.getElementById("welcomeMessage");
+//       welcomeElement.textContent = "Welcome, " + userName + "! This is Geovanny's Portfolio";
+//     }
+//   }
   //fucntion to show div in feartured resources 
   function toggleResourceVisibility() {
     const projectCards = document.querySelectorAll("#projects .project-card");
@@ -59,12 +59,24 @@ function personalizeWelcomeMessage() {
 //function to switch between darkmode and normal 
 function setupDarkModeToggle() {
     const toggle = document.getElementById("themeToggle");
+
+    //checked stored preference on page load
+    const darkModeEnabled = localStorage.getItem("darkMode") === "true";
+    if (darkModeEnabled){
+      document.body.classList.add("dark-mode");
+      toggle.checked = true;
+    } else {
+      document.body.classList.remove("dark-mode");
+      toggle.checked = false;
+    }
   
     toggle.addEventListener("change", function () {
       if (toggle.checked) {
         document.body.classList.add("dark-mode");
+        localStorage.setItem("darkMode", "true")
       } else {
         document.body.classList.remove("dark-mode");
+        localStorage.setItem("darkMode", "false");
       }
     });
   }
@@ -74,18 +86,21 @@ function setupDarkModeToggle() {
     //capturing element to show status message 
     const status = document.getElementById("statusMessage");
 
-    submitted.addEventListener("click", function(event){
+    if (submitted && status){
+
+      submitted.addEventListener("click", function(event){
         event.preventDefault();
         submitted.disabled = true;
         status.innerText = "Sending message...";
 
         setTimeout(function() {
-          status.innerText = "Thank you, " + userName + ", your message has been sent!";
+          status.innerText = "Thank you, your message has been sent!";
           submitted.disabled = false;
-        }, 2500);
+        }, 2500);      
         
-        
-    });   
+       });   
+
+    }  
 
   }
   // Adding  dinamacally comming  soon statement by updating the p element 
@@ -107,9 +122,23 @@ function changeCssStyle(){
   
 }
 
+//Close modal function 
+  function closeModal() {
+    const clsBtn = document.getElementById("modalCloseBtn");
+    const modalContainer = document.getElementById("myModal");
+
+    if (clsBtn && modalContainer){
+      clsBtn.addEventListener("click", function(event){
+        event.preventDefault();
+        modalContainer.style.display = "none";
+      }); 
+    }
+  }
+
   // Call both functions when the DOM is ready
   window.addEventListener("DOMContentLoaded", function () {
-    personalizeWelcomeMessage();
+    closeModal();
+    //personalizeWelcomeMessage();
     toggleResourceVisibility();
     loadSkills();
     setupDarkModeToggle();
@@ -117,5 +146,5 @@ function changeCssStyle(){
     addComingSoonP();
     changeCssStyle();
     changeCssStyle();
-
+    
   });

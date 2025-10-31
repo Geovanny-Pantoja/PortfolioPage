@@ -12,7 +12,7 @@
     <title>Geovanny Portfolio</title>
     <!-- Link to external CSS stylesheet -->
     <link rel="stylesheet" href="styles.css" />  
-    <script src="script.js"></script>  
+    
   </head>
   <body>
   <!-- Page header displaying the title and Nav link-->
@@ -35,6 +35,13 @@
       </label>
     </div>
   </header>
+  <!--Modal Window -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <p>This page is a work in progress!!</p>
+      <button id="modalCloseBtn">Close</button>      
+    </div>    
+  </div>
   <!-- Main content area -->
   <section id="about">
     <h1>About</h1>    
@@ -122,9 +129,10 @@
       <label for="message">Message:</label><br>
       <textarea id="message" name="message" row="6" cols="40" required></textarea><br>
 
-      <button type="submit" id="sButton">Submit</button>
+      <button type="submit" id="sButton" title="Click to send your message">Submit</button>
       <p id="statusMessage"></p>
     </form>
   </section>  
+  <script src="script.js"></script>  
  </body> 
 </html>
