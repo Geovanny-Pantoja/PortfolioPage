@@ -39,8 +39,6 @@ However, here are some browser features it depends on:
 
 ## How to Run Locally
 
-## How to Run Locally
-
 1. Clone the repository:
    ```bash
    git clone https://github.com/Geovanny-Pantoja/your-portfolio-repo.git
